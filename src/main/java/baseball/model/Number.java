@@ -6,10 +6,11 @@ import java.util.stream.Collectors;
 
 public class Number {
 
-    public static final String DIGIT_VALIDATION_ERROR_MESSAGE = "세 자리수 정수가 아닙니다.";
-    public static final String DUPLICATION_VALIDATION_ERROR_MESSAGE = "중복인 수가 존재합니다.";
-    public static final int MIN_NUMBER = 100;
-    public static final int MAX_NUMBER = 999;
+    private static final String DIGIT_VALIDATION_ERROR_MESSAGE = "세 자리수 정수가 아닙니다.";
+    private static final String DUPLICATION_VALIDATION_ERROR_MESSAGE = "중복인 수가 존재합니다.";
+    private static final int MIN_NUMBER = 100;
+    private static final int MAX_NUMBER = 999;
+
     public static final int DIGIT_NUMBER_CONDITION = 3;
 
     private Integer value;

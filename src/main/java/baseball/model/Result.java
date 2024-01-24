@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class Result {
 
-    public static final String STRIKE = "strike";
-    public static final String BALL = "ball";
+    private static final String STRIKE = "strike";
+    private static final String BALL = "ball";
 
     private final Map<String, Integer> counts;
 
@@ -17,7 +17,7 @@ public class Result {
     }
 
     public boolean isGameOver() {
-        return counts.get(STRIKE) == 3;
+        return counts.get(STRIKE) == Number.DIGIT_NUMBER_CONDITION;
     }
 
     public boolean hasOnlyStrike() {

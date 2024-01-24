@@ -2,9 +2,9 @@ package baseball.model;
 
 public class Command {
 
-    public static final String VALIDATION_ERROR_MESSAGE = "1,2 중 입력해주세요.";
-    public static final int REPLAY_COMMAND = 1;
-    public static final int STOP_COMMAND = 2;
+    private static final String VALIDATION_ERROR_MESSAGE = "1,2 중 입력해주세요.";
+    private static final int REPLAY_COMMAND = 1;
+    private static final int STOP_COMMAND = 2;
 
     private final int value;
 
