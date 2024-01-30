@@ -1,5 +1,7 @@
 package baseball.model;
 
+import java.util.Objects;
+
 public class Command {
 
     private static final String VALIDATION_ERROR_MESSAGE = "1,2 중 입력해주세요.";
@@ -17,6 +19,19 @@ public class Command {
         if (value != REPLAY_COMMAND && value != STOP_COMMAND) {
             throw new IllegalArgumentException(VALIDATION_ERROR_MESSAGE);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Command command = (Command) o;
+        return value == command.value;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
     }
 
     public boolean isReplay() {

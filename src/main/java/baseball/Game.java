@@ -1,5 +1,7 @@
-package baseball.model;
+package baseball;
 
+import baseball.model.*;
+import baseball.model.Number;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 
@@ -25,10 +27,6 @@ public class Game {
         }
     }
 
-    public boolean isOngoing() {
-        return isOngoing;
-    }
-
     public void readCommand() {
         int value = InputView.readCommand();
         command = new Command(value);
@@ -36,5 +34,9 @@ public class Game {
 
     public boolean isReplay() {
         return command.isReplay();
+    }
+
+    public boolean isOngoing() {
+        return isOngoing;
     }
 }
