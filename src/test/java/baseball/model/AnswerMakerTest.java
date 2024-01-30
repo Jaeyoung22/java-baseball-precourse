@@ -9,15 +9,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SuppressWarnings("NonAsciiCharacters")
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-class AnswerTest {
+class AnswerMakerTest {
 
     @Test
     void 정답을_생성한다() {
         // given, when
-        Answer answer = new Answer();
+        Number answer = AnswerMaker.make();
 
         // then
         assertThat(answer.fetchDigits()).hasSize(3);
     }
-
 }

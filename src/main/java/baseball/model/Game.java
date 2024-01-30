@@ -5,13 +5,13 @@ import baseball.view.OutputView;
 
 public class Game {
 
-    private final Answer answer;
+    private final Number answer;
 
     private boolean isOngoing = true;
     private Command command;
 
     public Game() {
-        this.answer = new Answer();
+        this.answer = AnswerMaker.make();
     }
 
     public void play() {

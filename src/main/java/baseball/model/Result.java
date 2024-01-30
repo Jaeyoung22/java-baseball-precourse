@@ -32,6 +32,10 @@ public class Result {
         return counts.get(BALL) == 0 && counts.get(STRIKE) == 0;
     }
 
+    public boolean hasBallAndStrike() {
+        return counts.get(BALL) != 0 && counts.get(STRIKE) != 0;
+    }
+
     public int fetchBallCount() {
         return counts.get(BALL);
     }

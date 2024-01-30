@@ -2,6 +2,7 @@ package baseball.model;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class Number {
@@ -13,9 +14,7 @@ public class Number {
 
     public static final int DIGIT_NUMBER_CONDITION = 3;
 
-    private Integer value;
-
-    Number() {}
+    private final Integer value;
 
     public Number(Integer value) {
         validate(value);
@@ -35,15 +34,23 @@ public class Number {
         }
     }
 
-    void setValue(Integer value) {
-        validate(value);
-        this.value = value;
-    }
-
     public List<Integer> fetchDigits() {
         return Arrays.stream(value.toString().split(""))
                 .mapToInt(Integer::parseInt)
                 .boxed()
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Number number = (Number) o;
+        return Objects.equals(value, number.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
     }
 }
